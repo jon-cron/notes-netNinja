@@ -7,6 +7,8 @@ const NewEventForm = () => {
   const handleSubmit = (e) => {
     e.preventDefault()
     console.log(title, date)
+    setTitle('')
+    setDate('')
   }
   return (
     <form className="new-event-form">
@@ -22,12 +24,14 @@ const NewEventForm = () => {
           <span>Event Title:</span>
           <input 
             type='text'
+            value={title}
             onChange={(e) => setTitle(e.target.value)}
             />
         </label>
         <label>
           <span>Event Date:</span>
           <input 
+          value={date}
             type='date'
             onChange={(e) => setDate(e.target.value)}
             />

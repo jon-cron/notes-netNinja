@@ -1,7 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import React from 'react'
-import Title from "./components/Title.js";
+import Modal from "./components/Modal.js";
 function App() {
   return (
     <div className="App">
@@ -19,6 +19,11 @@ function App() {
           Learn React
         </a>
       </header>
+      {/* NOTE a comp can be given props through a self closing comp or children as seen below without a self closing end */}
+      <Modal>
+      <h2>Title</h2>
+        <p>body</p>
+      </Modal>
     </div>
   );
 }

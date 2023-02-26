@@ -6,6 +6,13 @@ function App() {
   const [showModal, setShowModal] = useState(true)
   const [events, setEvents] = useState([])
 
+  const addEvent = (event) => {
+    setEvents((prevEvents) => {
+      return [...prevEvents, event]
+    })
+    // events.length > 0 ? console.log(events) : null
+  }
+
   const handleClose = () => {
     if(showModal){
       setShowModal(false)
@@ -22,7 +29,7 @@ function App() {
       <Modal
       handleClose={handleClose}
       >
-        <NewEventForm/>
+        <NewEventForm addEvent={addEvent}/>
       </Modal>}
         </header>
     </div>

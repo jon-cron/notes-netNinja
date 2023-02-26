@@ -1,12 +1,21 @@
 import './NewEventForm.css'
 import React, {useState} from 'react'
 
-const NewEventForm = () => {
+const NewEventForm = ({addEvent}) => {
   const [title, setTitle] = useState('')
   const [date, setDate] = useState('')
   const handleSubmit = (e) => {
     e.preventDefault()
-    console.log(title, date)
+    const event = {
+      title: title,
+      date: date,
+      id: Math.floor(Math.random() * 10000)
+    }
+    // NOTE passing the object up to the parent through props
+    addEvent(event)
+    resetForm()
+  }
+  const resetForm = () => {
     setTitle('')
     setDate('')
   }

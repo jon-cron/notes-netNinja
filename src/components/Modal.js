@@ -1,10 +1,11 @@
 import React from 'react'
 import './Modal.css'
-const Modal = (props) => {
+const Modal = ({children, handleClose}) => {
   return (
     <div className="modal-backdrop">
       <div className="modal">
-        {props.children}
+        {children}
+        <button onClick={handleClose}>Close</button>
       </div>
     </div>
   )

@@ -1,29 +1,29 @@
-import logo from './logo.svg';
 import './App.css';
-import React from 'react'
+import React, {useState} from 'react'
 import Modal from "./components/Modal.js";
 function App() {
+  const [showModal, setShowModal] = useState(true)
+
+  const handleClose = () => {
+    if(showModal){
+      setShowModal(false)
+    } else {
+      setShowModal(true)
+    }
+  }
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+        <button onClick={handleClose}>Open Modal</button>
       {/* NOTE a comp can be given props through a self closing comp or children as seen below without a self closing end */}
-      <Modal>
+      {showModal && 
+      <Modal
+      handleClose={handleClose}
+      >
       <h2>Title</h2>
         <p>body</p>
-      </Modal>
+      </Modal>}
+        </header>
     </div>
   );
 }

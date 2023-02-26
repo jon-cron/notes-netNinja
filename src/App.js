@@ -1,6 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
-
+import React from 'react'
+import Title from "./components/Title.js";
 function App() {
   return (
     <div className="App">

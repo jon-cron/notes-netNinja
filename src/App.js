@@ -1,6 +1,7 @@
 import './App.css';
 import React, {useState} from 'react'
 import Modal from "./components/Modal.js";
+import NewEventForm from "./components/NewEventForm.js";
 function App() {
   const [showModal, setShowModal] = useState(true)
   const [events, setEvents] = useState([])
@@ -21,8 +22,7 @@ function App() {
       <Modal
       handleClose={handleClose}
       >
-      <h2>Title</h2>
-        <p>body</p>
+        <NewEventForm/>
       </Modal>}
         </header>
     </div>

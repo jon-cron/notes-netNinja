@@ -1,8 +1,13 @@
 import './NewEventForm.css'
-
-import React from 'react'
+import React, {useState} from 'react'
 
 const NewEventForm = () => {
+  const [title, setTitle] = useState('')
+  const [date, setDate] = useState('')
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    console.log(title, date)
+  }
   return (
     <form className="new-event-form">
       {/* NOTE these are both acceptable ways of labeling a form input */}
@@ -15,8 +20,21 @@ const NewEventForm = () => {
         {/* NOTE by wrapping the input with the label this eliminates the need for the htmlFor="" */}
         <label>
           <span>Event Title:</span>
-          <input/>
+          <input 
+            type='text'
+            onChange={(e) => setTitle(e.target.value)}
+            />
         </label>
+        <label>
+          <span>Event Date:</span>
+          <input 
+            type='date'
+            onChange={(e) => setDate(e.target.value)}
+            />
+        </label>
+        <button
+        onClick={(e) => handleSubmit(e)}
+        >Submit</button>
     </form>
     )
 }

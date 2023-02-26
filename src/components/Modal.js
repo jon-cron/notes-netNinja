@@ -11,6 +11,7 @@ const Modal = ({children, handleClose}) => {
         <button onClick={handleClose}>Close</button>
       </div>
     </div>
+    // NOTE this document.body is us specifying where we would like the HTML injected
       ), document.body)
   )
 }
